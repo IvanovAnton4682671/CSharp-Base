@@ -26,11 +26,25 @@ public class MyStack
             stack.Push(1);   // Добавление элементов (стек: [1])
             stack.Push(2);   // Стек: [2, 1]
             stack.Push(3);   // Стек: [3, 2, 1]
-            int top = stack.Pop();     // Извлечение элемента (вернёт 3, Стек: [2, 1])
-            int next = stack.Peek();   // Просмотр верхнего элемента без извлечения (вернёт 2, Стек остается: [2, 1])
+            int top = stack.Pop();     // Извлечение элемента (вернёт 3, стек: [2, 1])
+            int next = stack.Peek();   // Просмотр верхнего элемента без извлечения (вернёт 2, стек остается: [2, 1])
             bool isEmpty = stack.Count == 0;   // Проверка наличия элементов (false)
             int count = stack.Count;   // Количество элементов (2)
             stack.Clear();   // Очистка стека
+        }
+        
+        
+        
+        // МНОГОПОТОЧНОСТЬ
+        // Стандартный Stack<T> не является потокобезопасным
+        // Для многопоточных сценариев используется ConcurrentStack<T>
+        void MultiThreading()
+        {
+            using System.Collections.Concurrent;
+            
+            ConcurrentStack<int> concurrentStack = new ConcurrentStack<int>();
+            concurrentStack.Push(1);
+            concurrentStack.TryPop(out int result);   // result = 1
         }
     }
 }
