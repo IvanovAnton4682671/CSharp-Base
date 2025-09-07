@@ -44,6 +44,15 @@ namespace MyStringStringBuilder
         string replaced = s3.Replace("world", "C#");   // "C#"
         // Обрезка пробелов
         string trimmed = "  text  ".Trim();            // "text"
+        
+        
+        
+        // ОСОБЕННОСТИ
+        string path = @"C:\Users\File.txt"; // Не требует двойного обратного слеша
+        string multiline = @"Line 1
+        Line 2";
+        bool isEmpty = string.IsNullOrEmpty(s);
+        bool isWhiteSpace = string.IsNullOrWhiteSpace(s);
     }
 
 
