@@ -69,7 +69,7 @@ public class OuterAnimal
 
     // ПОЛИМОРФИЗМ
     Animal myAnimal = new Dog();
-    myAnimal.Speak();   // "Woof!" - вызывается метод производного класса
+    // myAnimal.Speak();   // "Woof!" - вызывается метод производного класса
 }
 
 
